@@ -1,6 +1,7 @@
 package huawei;
 
-import java.util.*;
+
+import java.util.Scanner;
 
 /**
  * Created by xl on 2017/4/10.
@@ -11,41 +12,22 @@ public class num_23 {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
             String str = sc.nextLine();
-            Map<Character,List<Integer>> map = new HashMap<>();
-            for (int i = 0; i <str.length(); i++) {
-                if(map.containsKey(str.charAt(i))){
-                    continue;
-                }
-                List<Integer> lists = new ArrayList<>();
-                lists.add(i);
-                for (int j = i+1; j <str.length() ; j++) {
-                    //要在这之前放入map
-                    if(map.containsKey(str.charAt(j))){
-                        lists.add(j);
-                    }
-                }
-                map.put(str.charAt(i),lists);
+            int[] count = new int[26];//每个元素为0，按照字母顺序存下标表示该字母的个数
+            for (int i = 0; i < str.length(); i++) {
+                count[str.charAt(i)-'a']++;
             }
-
-            List<Integer> flag = new ArrayList<>();
-
-            int min = 0;
-            for(Map.Entry<Character,List<Integer>> m: map.entrySet()){
-                int cur = m.getValue().size();
-                if(cur<min){
-                    min = cur;
-                    flag = m.getValue();
+            int min=20;
+            for (int i = 0; i < 26 ; i++) {
+                if(count[i]<min&&count[i]>0){
+                    min = count[i];
                 }
             }
-
             StringBuffer sb = new StringBuffer();
-
-            for (int i = 0; i <str.length() ; i++) {
-                if(!flag.contains(i)){
+            for (int i = 0; i <str.length(); i++) {
+                if(count[str.charAt(i)-'a']>min){
                     sb.append(str.charAt(i));
                 }
             }
-
             System.out.println(sb);
 
         }
