@@ -18,34 +18,34 @@ public class num_23_ {
                 }
                 List<Integer> lists = new ArrayList<>();
                 lists.add(i);
+                map.put(str.charAt(i),lists);
                 for (int j = i+1; j <str.length() ; j++) {
                     //要在这之前放入map
                     if(map.containsKey(str.charAt(j))){
                         lists.add(j);
                     }
                 }
-                map.put(str.charAt(i),lists);
-            }
-
-            List<Integer> flag = new ArrayList<>();
-
-            int min = 0;
-            for(Map.Entry<Character,List<Integer>> m: map.entrySet()){
-                int cur = m.getValue().size();
-                if(cur<min){
-                    min = cur;
-                    flag = m.getValue();
-                }
+                //map.put(str.charAt(i),lists);在这之前lists发生变化后其实直接修改了map里的lists
             }
 
             StringBuffer sb = new StringBuffer();
 
-            for (int i = 0; i <str.length() ; i++) {
-                if(!flag.contains(i)){
-                    sb.append(str.charAt(i));
+            int min = 20;
+            for(Map.Entry<Character,List<Integer>> m: map.entrySet()){
+                int cur = m.getValue().size();
+                if(cur<min){
+                    min = cur;
                 }
             }
 
+            for (Map.Entry<Character,List<Integer>> m: map.entrySet()){
+                int cur = m.getValue().size();
+                if(cur>min){
+                    for(Integer integer:m.getValue()){
+                        //sb.setCharAt(integer,m.getKey());这里不好按照原来顺序添加
+                    }
+                }
+            }
             System.out.println(sb);
 
         }
