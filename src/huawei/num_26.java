@@ -17,6 +17,7 @@ public class num_26 {
             for (int i = 0; i <26 ; i++) {
                 for (Character c:chs){
                     if((c>='A'&&c<='Z')||(c>='a'&&c<='z')){
+
                         if((Character.toLowerCase(c)-'a')==i){
                             sb.append(c);
                         }
