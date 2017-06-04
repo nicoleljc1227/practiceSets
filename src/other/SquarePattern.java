@@ -17,6 +17,7 @@ public class SquarePattern {
             int n = sc.nextInt();
             squarePatternPrint(n);
 
+
         }
 
     }

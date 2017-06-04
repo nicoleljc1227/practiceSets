@@ -11,6 +11,7 @@ public class DigitOccurrence {
         int num2 = 616263266;
         System.out.println(findDigitOccurrence(num1, num2));
 
+
     }
 
     public static int findDigitOccurrence(int num1, int num2) {
