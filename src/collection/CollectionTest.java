@@ -1,5 +1,9 @@
 package collection;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+
 /**
  * Created by xl on 2017/6/2.
  */
