@@ -36,12 +36,14 @@ public class TreeSetExample {
         Person p2 = new Person();
         p2.age = 30;
 
+
+
         Comparator<Person> comparator = (o1, o2) -> {//
             //从大到小
             if(o1.age<o2.age){
-                return 1;// o1小于o2 返回正数
+                return 1;// // 如果o1-o2 为正数 代表o1在后面
             }else if (o1.age>o2.age){
-                return -1;
+                return -1;// 如果o1-o2 为负数 代表o1在前
             }else {
                 return 0;
             }
