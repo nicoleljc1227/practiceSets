@@ -53,9 +53,6 @@ public class HashSetTest {
         System.out.println("是都包含count为6的R对象？"+ hashSet.contains(new R(6)));
         System.out.println("是都包含count为8的R对象？"+ hashSet.contains(new R(8)));
 
-
-
-
     }
 
 }

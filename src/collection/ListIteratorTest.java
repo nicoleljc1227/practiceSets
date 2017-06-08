@@ -24,6 +24,5 @@ public class ListIteratorTest {
         while (lit.hasPrevious()){
             System.out.println(lit.previous());
         }
-
     }
 }

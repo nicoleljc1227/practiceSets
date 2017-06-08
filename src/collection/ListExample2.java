@@ -20,7 +20,6 @@ public class ListExample2 {
         System.out.println(books);
         //用字符串长度来替换所有元素
         books.replaceAll(ele->ele.toString().length());
-
         System.out.println(books);
     }
 }

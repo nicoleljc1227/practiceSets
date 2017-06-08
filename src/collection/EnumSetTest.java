@@ -9,7 +9,6 @@ public class EnumSetTest {
     enum Season{
         SPRING,SUNMER,FALL,WINTER
     }
-
     public static void main(String[] args) {
         //创建一个EnumSet，元素时所有枚举值
         EnumSet es1 = EnumSet.allOf(Season.class);
