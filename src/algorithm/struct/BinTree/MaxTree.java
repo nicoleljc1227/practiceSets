@@ -9,8 +9,6 @@ public class MaxTree {
         int[] arr = {2049,933,1444,1695,96,1025,533};
         int[] res = buildMaxTree(arr,7);
         System.out.println(res);
-
-
     }
 
     public static int[] buildMaxTree(int[] A, int n) {
