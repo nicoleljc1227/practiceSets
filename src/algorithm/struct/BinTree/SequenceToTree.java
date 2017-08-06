@@ -30,16 +30,11 @@ public class SequenceToTree {
 
     }
 
-
     public static void main(String[] args) {
         //给定串
         String str = "12!3!#!#!#!";
         String[] arr = str.split("!");
         TreeNode root = sequenceToTree(arr,count);
-
-
-
-
     }
 
 }
