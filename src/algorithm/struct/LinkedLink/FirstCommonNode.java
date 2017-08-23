@@ -26,7 +26,8 @@ public class FirstCommonNode {
         int[] arr2 = {4,5,6,6,7};
         ListNode head1 = createList(arr);
         ListNode head2 = createList(arr2);
-        ListNode common = firstCommomNode(head1,head2);
+       // ListNode common = firstCommomNode(head1,head2);
+        ListNode common = firstCommomNode1(head1,head2);
     }
 
     public static ListNode createList(int[] a){
@@ -72,5 +73,49 @@ public class FirstCommonNode {
             }
         }
         return res;
+    }
+    //不使用栈 外部空间 先得到2条链表的长度 得到长的比短的长几个节点，然后开始同时遍历找到第一个相同的节点
+    public static ListNode firstCommomNode1(ListNode root1, ListNode root2){
+        int len1 = getListLength(root1);
+        int len2 = getListLength(root2);
+        ListNode p = null;
+        ListNode q = null;
+        if(len1>len2){
+            while ((len1-len2)>0){
+                root1 = root1.next;
+                len1--;
+                p = root1;
+            }
+            q = root2;
+        }else {
+            while ((len2-len1)>0){
+                root2 = root2.next;
+                len2--;
+                p = root2;
+            }
+            q = root1;
+        }
+        while (p!=null){
+            if(p.data!=q.data){//2个节点是否相等不能直接用== 要比较data
+                p = p.next;
+                q = q.next;
+            }else {
+                break;
+            }
+        }
+        return p;
+    }
+    /**
+     *
+     * @param head
+     * @return 返回链表长度
+     */
+    public static  int getListLength(ListNode head){
+        int length = 0;
+        while (head!=null){
+            length++;
+            head = head.next;
+        }
+        return length;
     }
 }
