@@ -11,15 +11,18 @@ public class SynchronizedTest4 implements Runnable{
         count = 0;
     }
     //修饰静态方法，则会对所有该类的对象进行加锁
-    public synchronized static void method(){
-        for (int i = 0; i < 5; i ++) {
-            try {
-                System.out.println(Thread.currentThread().getName() + ":" + (count++));
-                //Thread.sleep(100);这里不需要加sleep 效果是一样的
-            } catch (Exception e) {
-                e.printStackTrace();
+    public /*synchronized*/ static void method(){//这里也可以在类上加锁 效果一样
+        synchronized (SynchronizedTest4.class){
+            for (int i = 0; i < 5; i ++) {
+                try {
+                    System.out.println(Thread.currentThread().getName() + ":" + (count++));
+                    //Thread.sleep(100);这里不需要加sleep 效果是一样的
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
+
     }
 
     @Override
