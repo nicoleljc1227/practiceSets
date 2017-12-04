@@ -27,11 +27,9 @@ public class HeapTopK {
                 parent = (parent-1)/2;
             }
             result[child] = temp;//如没有满足while条件则不交换，temp就是result[child]
-
         }
         return result;
     }
-
     public static void insert(int[] a,int value){
         a[0] = value;
         int parent = 0;
