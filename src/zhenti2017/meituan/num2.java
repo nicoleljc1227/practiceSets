@@ -28,7 +28,8 @@ public class num2 {
         }
     }
 
-
+//第一组的学生数目太大有可能会改到自己 的试卷 ，所以题目只要判断能不能避免这2个出现的问题 ，组里人数最多的要小于前面几个组的和
+    //首先桌上试卷要大于后面一组人数，
     public static boolean process(int[] array){
         if(array.length<2) return false;
         Arrays.sort(array);
