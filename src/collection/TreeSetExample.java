@@ -1,13 +1,14 @@
 package collection;
 
-import java.util.Comparator;
+import java.util.Comparator;//是在集合外部实现的排序 而Comparable是集合内容定义 排序
 import java.util.TreeSet;
 
 /**
  * Created by xl on 2017/5/25.
  * TreeSet自定义排序
+ * comparable相当于内部比较器。comparator相当于外部比较器。
  */
-public class TreeSetExample {
+public class  TreeSetExample {
 //    static class Person{
 //        int age;
 //

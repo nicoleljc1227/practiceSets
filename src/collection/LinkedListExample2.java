@@ -10,6 +10,8 @@ import java.util.LinkedList;
 public class LinkedListExample2 {
     public static void main(String[] args) {
        LinkedList books = new LinkedList();
+
+
        books.offer("aaa");//添加到队列尾部
        books.push("bbb");//加入到栈的顶部
        books.offerFirst("ccc");//添加到队列的头部

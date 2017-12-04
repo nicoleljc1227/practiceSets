@@ -1,26 +1,20 @@
 package collection;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by xl on 2017/5/26.
  */
 public class LinkedListExample {
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        list.add("aa");
-        list.add("bb");
-        list.add("cc");
-        System.out.println("addfirst"+list);
-        list.addFirst("addfirst");
-        System.out.println("addLsat"+list);
-        list.addLast("addLast");
-        System.out.println();
-        System.out.println(list.getFirst()+"getfirst");
-        System.out.println(list.getLast()+"getlast");
-        System.out.println(list.removeFirst()+"removeFirst");
-        System.out.println(list.removeLast()+"removeLast");
-        System.out.println();
-        System.out.println(list);
+        List<Integer> li = new ArrayList<>();
+        li.add(6);
+        li.add(9);
+        List list = li;
+        List<String> ls = list;
+        System.out.println(list.get(1));
+
     }
 }
